@@ -5,6 +5,7 @@ function removeSmallest(numbers){
 
     let min = Math.min(...numbers);
     let index = numbers.indexOf(min);
+    //creates a new array that excludes the smallest number by taking the elements before it and the elements after it, and putting them together in a new array.
     return numbers.slice(0, index).concat(numbers.slice(index + 1));
 }
 
