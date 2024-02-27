@@ -1,13 +1,11 @@
 function removeSmallest(numbers){
-    let min = numbers[0];
-
-    for(let i = 0 ; i < numbers.length; i++){
-        if(min > numbers[i]){
-            min = numbers[i];
-        }
+    if(numbers.length === 0){
+        return [];
     }
 
-    console.log(min)
+    let min = Math.min(...numbers);
+    let index = numbers.indexOf(min);
+    return numbers.slice(0, index).concat(numbers.slice(index + 1));
 }
 
 removeSmallest([1,2,3,4,5])
