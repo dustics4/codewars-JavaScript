@@ -1,0 +1,39 @@
+function duplicateCount(text){
+  text = text.toLowerCase();
+  let count = {};
+
+  for(let i = 0; i < text.length; i++){
+    let char = text[i];
+
+    if((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9')){
+        if(count[char]){
+            count[char]++
+        }else{
+            count[char] = 1;
+        }
+    }
+  }
+
+  let duplicateCount = 0;
+  for(let c in count){
+    if(count[c] > 1){
+        duplicateCount++
+    }
+  }
+
+  console.log(duplicateCount);
+  /*
+Convert the input string to lowercase to make the comparison case-insensitive.
+Create an empty object charCount to store the count of each character.
+Loop through the input string using an index-based loop.
+Get the current character at the index i.
+Check if the character is alphanumeric (a-z or 0-9).
+Increment the count of the character in the charCount object or initialize it to 1 if it's the first occurrence.
+Count the distinct characters that occur more than once by looping through the charCount object.
+Return the count of distinct characters that occur more than once.
+*/
+
+}
+
+duplicateCount("abcde");
+duplicateCount("aabbcde");
