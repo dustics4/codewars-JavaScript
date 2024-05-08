@@ -17,5 +17,22 @@ function isUnique(string){
     }
 }
 
+function isUniqueASCII(string){
+
+    let chArray = string.split('');
+
+    chArray.sort();
+    for(let i = 0; i < chArray.length; i++){
+        if(chArray[i] != chArray[i + 1]){
+            continue;
+        }else{
+            return false;
+        }
+    }
+
+    return true;
+}
+
+isUniqueASCII("sek");
 isUnique("sek");
 
