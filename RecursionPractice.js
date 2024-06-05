@@ -31,3 +31,31 @@ function factorial(n){
 }
 
 factorial(5);
+
+function fib(n){
+    let a =1 ;
+    let b = 1;
+    for(let i = 3; i <= n; i++){
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
+
+fib(7)
+
+
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
