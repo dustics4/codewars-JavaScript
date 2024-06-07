@@ -26,5 +26,14 @@ var allAreLessThanSeven = all([1,2,9], function(num){
 console.log(allAreLessThanSeven); // false
 
 function all(array, callback){
-    
+    var copy = copy || array.slice(); //copies the array
+
+    if(copy.length === 0) return true; //if the array is empty return true
+
+    if(callback(copy[0])){ 
+        copy.shift(); // remove first element of array
+        return all(copy, callback);
+    }else{
+        return false;
+    }
 }
