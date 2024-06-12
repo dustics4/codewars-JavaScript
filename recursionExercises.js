@@ -55,3 +55,30 @@ function totalIntegers(array){
 
 	return total + totalIntegers(array);
 }
+
+
+
+function sumSquares(array){
+    if(array.length === 0 )return 0;
+    let total = 0;
+
+    for(let i = 0; i < array.length; i++){
+        if(Array.isArray(array[i])){
+            total += sumSquares(array[i]);
+        }else {
+            total += array[i] * array[i];
+        }
+    }
+    return total;
+}
+
+
+sumSquares([[1,2],3]);
+
+function replicate(times , number){
+    if(times <= 0) return [];
+
+    return [number].concat(replicate(times - 1, number));
+
+}
+replicate(3,5);
